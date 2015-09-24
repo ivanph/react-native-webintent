@@ -1,0 +1,12 @@
+{
+  "name": "react-native-webintent",
+  "version": "1.0.0",
+  "description": "React native android module to open links in the default browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["react", "react-native", "intent", "android", "browser"],
+  "author": "Ivan Pintado <ivan.pintadoh@gmail.com>",
+  "license": "MIT"
+}
