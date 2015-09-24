@@ -8,5 +8,7 @@
   },
   "keywords": ["react", "react-native", "intent", "android", "browser"],
   "author": "Ivan Pintado <ivan.pintadoh@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/ivanph/react-native-webintent",
+  "bugs": "https://github.com/ivanph/react-native-webintent/issues"
 }
