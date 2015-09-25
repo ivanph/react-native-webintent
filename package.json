@@ -10,5 +10,8 @@
   "author": "Ivan Pintado <ivan.pintadoh@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/ivanph/react-native-webintent",
-  "bugs": "https://github.com/ivanph/react-native-webintent/issues"
+  "bugs": "https://github.com/ivanph/react-native-webintent/issues",
+  "peerDependencies": {
+    "react-native": ">=0.11"
+  }
 }
