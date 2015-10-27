@@ -37,6 +37,9 @@ public class RNWebIntentModule extends ReactContextBaseJavaModule {
     Intent intent = new Intent(Intent.ACTION_VIEW);
     intent.setData(Uri.parse(url));
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    this.reactContext.startActivity(intent);
+    //Check that an app exists to receive the intent
+    if (intent.resolveActivity(this.reactContext.getPackageManager()) != null) {
+      this.reactContext.startActivity(intent);
+    }
   }
 }
