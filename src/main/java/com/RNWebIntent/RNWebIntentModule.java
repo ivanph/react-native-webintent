@@ -29,8 +29,10 @@ public class RNWebIntentModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void open(String url) {
-    if (!url.startsWith("https://") && !url.startsWith("http://")) {
-      url = "http://" + url;
+    if (Uri.parse(url).getScheme() == null) {
+      //if URL is missing scheme default to http
+      Uri.Builder builder = new Uri.Builder();
+      url = builder.scheme("http").authority(url).build().toString();
     }
     Intent intent = new Intent(Intent.ACTION_VIEW);
     intent.setData(Uri.parse(url));
