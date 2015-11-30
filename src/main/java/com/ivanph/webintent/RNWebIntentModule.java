@@ -49,7 +49,7 @@ public class RNWebIntentModule extends ReactContextBaseJavaModule {
         url = "tel:" + url;  
     }
     Intent intent = new Intent(Intent.ACTION_DIAL);
-    intent.setData(Uri.parse(uri));
+    intent.setData(Uri.parse(url));
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     if (intent.resolveActivity(this.reactContext.getPackageManager()) != null) {
       this.reactContext.startActivity(intent);
