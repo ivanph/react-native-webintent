@@ -42,4 +42,28 @@ public class RNWebIntentModule extends ReactContextBaseJavaModule {
       this.reactContext.startActivity(intent);
     }
   }
+
+  @ReactMethod
+  public void dial(String url) {
+    if (url.startsWith("tel")) {
+        url = "tel:" + url;  
+    }
+    Intent intent = new Intent(Intent.ACTION_DIAL);
+    intent.setData(Uri.parse(uri));
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    if (intent.resolveActivity(this.reactContext.getPackageManager()) != null) {
+      this.reactContext.startActivity(intent);
+    }
+  }
+  
+  @ReactMethod
+  public void email(String mailto, String subject, String body, String intentTitle) {
+    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",mailto, null));
+    emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+    emailIntent.putExtra(Intent.EXTRA_TEXT, body);
+    emailIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    if (emailIntent.resolveActivity(this.reactContext.getPackageManager()) != null) {
+      this.reactContext.startActivity(Intent.createChooser(emailIntent, intentTitle));
+    }
+  }
 }
