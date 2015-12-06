@@ -2,6 +2,10 @@
 
 A React Native web intent for Android. Allows to open links in the default browser.
 
+### Notice
+
+As of [version 0.15](https://github.com/facebook/react-native/releases/tag/v0.15.0) react-native includes a `IntentAndroid` module that might suit yours needs better.
+
 ### Installation
 
 ```bash
